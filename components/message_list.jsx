@@ -10,7 +10,7 @@ export class MessageList extends React.Component {
     });
     return (
       <div>
-        {messageList};
+        {messageList}
       </div>
     );
   }

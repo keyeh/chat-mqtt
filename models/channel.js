@@ -1,5 +1,5 @@
 
-export class Channel {
+export default class Channel {
 
   constructor(id, messages) {
     this.id = id;

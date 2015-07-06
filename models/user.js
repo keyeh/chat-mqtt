@@ -1,5 +1,5 @@
 
-export class User {
+export default class User {
 
   constructor(id, name) {
     this.id = id;

@@ -33,7 +33,7 @@ export class MessageInput extends React.Component {
 
   _onKeyDown(event) {
     if(event.keyCode === ENTER_KEY) {
-      ChannelActions.addMessage(this.state.message);
+      this.props.addMessage(event.target.value);
       this.setState({message: ''});
     }
   }
