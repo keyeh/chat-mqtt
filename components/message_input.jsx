@@ -1,9 +1,5 @@
 import React from 'react';
 
-import {
-  ChannelActions
-} from '../actions/channels.js';
-
 const ENTER_KEY = 13;
 
 export class MessageInput extends React.Component {
