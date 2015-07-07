@@ -18,6 +18,7 @@
     "watchify": "^3.2.3"
   },
   "scripts": {
+    "mosca": "mosca -v --http-port 3000 --http-bundle --http-static ./ | bunyan",
     "serve": "node server.js",
     "watchify": "watchify ./index.jsx -o ./public/bundle.js -v -d",
     "start": "npm run watchify & npm run serve"
