@@ -1,7 +1,7 @@
 import React from 'react';
 import mui from 'material-ui';
 
-import Chat from '../components/chat.jsx';
+import ChatContainer from './chat_container.jsx';
 import { createRedux } from 'redux';
 import { Provider } from 'redux/react';
 import * as stores from '../stores';
@@ -20,7 +20,7 @@ export default class App {
   render() {
     return (
       <Provider redux={redux}>
-        {() => <Chat />}
+        {() => <ChatContainer />}
       </Provider>
     );
   }

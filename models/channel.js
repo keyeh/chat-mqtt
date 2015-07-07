@@ -10,4 +10,8 @@ export default class Channel {
     return new Channel(channel.id, [...channel.messages, message]);
   }
 
+  getName() {
+    return this.id;
+  }
+
 }

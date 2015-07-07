@@ -1,17 +1,18 @@
 import {
   CONNECT_CHANNEL,
   ADD_MESSAGE,
-  RECEIVE_MESSAGE
+  RECEIVE_MESSAGE,
+  CREATE_CHANNEL
 } from '../constants/action_types';
 
 import client from '../libs/client';
 import Message from '../models/message';
 
-export function connect() {
+export function initialize(channel, user) {
   return (dispatch, getState) => {
-    const {chat:{channel, user}} = getState();
 
     client.on('connect', function () {
+      const {chat:{channel}} = getState();
       client.subscribe(channel.id);
     });
 
@@ -19,6 +20,16 @@ export function connect() {
       let message = Message.deserialize(_message);
       dispatch(receiveMessage(message));
     });
+
+    dispatch(createChannel(channel, user));
+  };
+}
+
+export function createChannel(channel, user) {
+  return {
+    type: CREATE_CHANNEL,
+    channel: channel,
+    user: user
   };
 }
 

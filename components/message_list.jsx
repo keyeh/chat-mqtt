@@ -30,9 +30,9 @@ export class MessageList extends React.Component {
 
   getMessageListStyle() {
     return {
-      height: 'calc(100% - 100px)',
+      height: 'calc(100% - 112px)', // nav + input + padding
       overflow: 'scroll',
-      padding: '0 8px'
+      padding: '4px 8px'
     };
   }
 }

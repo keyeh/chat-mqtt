@@ -7,15 +7,7 @@ import {ChannelTitle} from './channel_title.jsx';
 import {MessageInput} from './message_input.jsx';
 import * as ChannelActions from '../actions/channel';
 
-
-@connect(state => ({
-  chat: state.chat
-}))
 export default class Chat extends React.Component {
-  constructor(props) {
-    super(props)
-    this.props.dispatch(ChannelActions.connect());
-  }
 
   render() {
     const {chat, dispatch} = this.props;
