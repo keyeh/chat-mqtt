@@ -1,4 +1,5 @@
 import React from 'react';
+import {TextField} from 'material-ui';
 
 const ENTER_KEY = 13;
 
@@ -13,9 +14,10 @@ export class MessageInput extends React.Component {
 
   render() {
     return (
-      <div>
-        <input value={this.state.message}
-          onKeyDown={this._onKeyDown.bind(this)}
+      <div style={this.getContainerStyle()}>
+        <TextField style={this.getInputStyle()}
+          value={this.state.message}
+          onEnterKeyDown={this._onEnterKeyDown.bind(this)}
           onChange={this._onChange.bind(this)} />
       </div>
     );
@@ -27,10 +29,24 @@ export class MessageInput extends React.Component {
     });
   }
 
-  _onKeyDown(event) {
-    if(event.keyCode === ENTER_KEY) {
-      this.props.addMessage(event.target.value);
-      this.setState({message: ''});
-    }
+  _onEnterKeyDown(event) {
+    this.props.addMessage(event.target.value);
+    this.setState({message: ''});
+  }
+
+  getContainerStyle() {
+    return {
+      width: '100%',
+      position: 'fixed',
+      bottom: '0',
+      backgroundColor: '#FAFAFA',
+      textAlign: 'center'
+    };
+  }
+
+  getInputStyle() {
+    return {
+      width: 'calc(100% - 16px)'
+    };
   }
 }

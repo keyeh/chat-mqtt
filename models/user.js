@@ -10,6 +10,10 @@ export default class User {
     return new User(raw.id, raw.name);
   }
 
+  isEqual(user) {
+    return this.id === user.id;
+  }
+
   serialize() {
     return {
       id: this.id,
