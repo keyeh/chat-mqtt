@@ -4,9 +4,9 @@ export default class MessageSentTime extends React.Component {
 
   render() {
     return (
-      <div style={this.getMessageSentTimeStyle()}>
+      <span style={this.getMessageSentTimeStyle()}>
         {this.props.timestamp.fromNow()}
-      </div>
+      </span>
     );
   }
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Paper} from 'material-ui';
 
-import MessageSentTime from './message_sent_time.jsx';
 import MessageText from './message_text.jsx';
+import MessageTagline from './message_tagline.jsx';
 
 export class MessageItem extends React.Component {
 
@@ -11,7 +11,7 @@ export class MessageItem extends React.Component {
       <div style={this.getContainerStyle()}>
         <Paper zDepth={1} style={this.getMessageStyle()}>
           <MessageText text={this.props.message.message} />
-          <MessageSentTime timestamp={this.props.message.timestamp} />
+          <MessageTagline message={this.props.message} user={this.props.user} />
         </Paper>
       </div>
     );
@@ -19,7 +19,7 @@ export class MessageItem extends React.Component {
 
   getMessageStyle() {
     let styles = {
-      maxWidth: '70%',
+      maxWidth: '95%',
       padding: '8px 12px'
     };
 
