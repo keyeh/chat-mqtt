@@ -37,7 +37,6 @@ export default class Chat extends React.Component {
     }
 
     if (currentView === USERS_VIEW) {
-      console.log(chat);
       content = (
         <UserList channel={chat.channel} />
       );

@@ -8,7 +8,6 @@ import {
 export default class UserList extends React.Component {
 
   render() {
-    console.log(this.props);
     let items = this.props.channel.participants.map((user) => {
       return (
         <ListItem>{user.name}</ListItem>
