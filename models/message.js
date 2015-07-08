@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+import User from './user.js';
+
 export default class Message {
 
   constructor(message, user, timestamp) {
@@ -12,7 +14,7 @@ export default class Message {
     let rawMessage = JSON.parse(raw);
     return new Message(
       rawMessage.message,
-      rawMessage.user,
+      new User(rawMessage.user.id, rawMessage.user.name),
       moment(rawMessage.timestamp)
     );
   }

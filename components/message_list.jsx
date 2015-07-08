@@ -2,7 +2,7 @@ import React from 'react';
 
 import {MessageItem} from './message_item.jsx';
 
-export class MessageList extends React.Component {
+export default class MessageList extends React.Component {
 
   componentWillUpdate() {
     let node = React.findDOMNode(this);
@@ -32,7 +32,8 @@ export class MessageList extends React.Component {
     return {
       height: 'calc(100% - 112px)', // nav + input + padding
       overflow: 'scroll',
-      padding: '4px 8px'
+      padding: '4px 8px',
+      width: 'calc(100% - 16px)' // padding left + right
     };
   }
 }

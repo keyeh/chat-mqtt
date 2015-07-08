@@ -3,7 +3,7 @@ import {TextField} from 'material-ui';
 
 const ENTER_KEY = 13;
 
-export class MessageInput extends React.Component {
+export default class MessageInput extends React.Component {
 
   constructor(props) {
     super(props);
