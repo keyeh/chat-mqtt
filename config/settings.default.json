@@ -1,0 +1,8 @@
+{
+  "mqttConnection": {
+    "host": "HOST",
+    "username": "USERNAME",
+    "password": "PASSWORD",
+    "port": "PORT"
+  }
+}
