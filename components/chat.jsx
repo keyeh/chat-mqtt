@@ -2,9 +2,9 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'redux/react';
 
-import MessageList from './message_list.jsx';
+import { MessageList, MessageInput } from './message';
+
 import ChannelTitle from './channel_title.jsx';
-import MessageInput from './message_input.jsx';
 import UserList from './user_list.jsx';
 import * as ChannelActions from '../actions/channel';
 
