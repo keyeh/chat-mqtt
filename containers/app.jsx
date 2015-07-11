@@ -1,9 +1,9 @@
 import React from 'react';
-import mui from 'material-ui';
-
-import ChatContainer from './chat_container.jsx';
 import { createRedux } from 'redux';
 import { Provider } from 'redux/react';
+import mui from 'material-ui';
+
+import { ChatContainer } from '.';
 import * as stores from '../stores';
 
 var ThemeManager = new mui.Styles.ThemeManager();

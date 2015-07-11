@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'redux/react';
 
-import Chat from '../components/chat.jsx';
+import { Chat } from '../components';
+import { Channel, User } from '../models';
 import * as ChannelActions from '../actions/channel';
 
-import Channel from '../models/channel';
-import User from '../models/user';
 
 @connect(state => ({
   chat: state.chat

@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import User from './user.js';
+import { User } from '.';
 
 export default class Message {
 
