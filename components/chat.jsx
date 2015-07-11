@@ -1,11 +1,9 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'redux/react';
 
-import { MessageList, MessageInput } from './message';
-
 import ChannelTitle from './channel_title.jsx';
-import UserList from './user_list.jsx';
+import { UserContainer } from './user';
+import { MessageContainer } from './message';
 import * as ChannelActions from '../actions/channel';
 
 import {
@@ -14,6 +12,7 @@ import {
 } from '../constants/views.js';
 
 export default class Chat extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -28,17 +27,13 @@ export default class Chat extends React.Component {
 
     if (currentView === CHAT_VIEW) {
       content = (
-        <div>
-          <MessageList chat={chat} />
-          <MessageInput
-            {...bindActionCreators(ChannelActions, dispatch)} />
-        </div>
+        <MessageContainer chat={chat} dispatch={dispatch} />
       );
     }
 
     if (currentView === USERS_VIEW) {
       content = (
-        <UserList channel={chat.channel} />
+        <UserContainer channel={chat.channel} />
       );
     }
 
