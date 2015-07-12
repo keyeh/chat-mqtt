@@ -1,6 +1,14 @@
 import React from 'react';
+
+// Redux
 import { createRedux } from 'redux';
 import { Provider } from 'redux/react';
+
+// Router
+import { Router, Route} from 'react-router';
+import HashHistory from 'react-router/lib/HashHistory';
+
+// Material UI
 import mui from 'material-ui';
 
 import { ChatContainer } from '.';
@@ -20,7 +28,7 @@ export default class App {
   render() {
     return (
       <Provider redux={redux}>
-        {() => <ChatContainer />}
+        {renderRouter.bind(null, new HashHistory())}
       </Provider>
     );
   }
@@ -29,3 +37,11 @@ export default class App {
 App.childContextTypes = {
   muiTheme: React.PropTypes.object
 };
+
+function renderRouter(history) {
+  return (
+    <Router history={history}>
+      <Route path="/" component={ChatContainer} />
+    </Router>
+  );
+}
