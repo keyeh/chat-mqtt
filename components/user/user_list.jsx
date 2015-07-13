@@ -10,7 +10,7 @@ export default class UserList extends React.Component {
   render() {
     let items = this.props.channel.participants.map((user) => {
       return (
-        <ListItem>{user.name}</ListItem>
+        <ListItem key={user.name}>{user.name}</ListItem>
       );
     });
 
